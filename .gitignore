@@ -36,3 +36,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+export const environment = {
+  production: false,
+  apiUrl:"https://talaikis.com/api/quotes/random/"
+};

@@ -7,7 +7,10 @@ import { GoalDetailsComponent } from './goal-details/goal-details.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { GoalFormComponent } from './goal-form/goal-form.component';
-
+import {AlertsService} from './alert-service/alerts.service';
+import {HttpClientModule} from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,9 +22,12 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpModule
   ],
-  providers: [],
+  providers: [AlertsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
